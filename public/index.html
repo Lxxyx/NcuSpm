@@ -16,6 +16,9 @@
 		#main ul>li {
 			margin-top: 8px;
 		}
+        #main ul {
+            padding-left: 0!important;
+        }
     </style>
 </head>
 
@@ -70,6 +73,7 @@
                     <ul>
                         <li v-for="ele in focusNews">
                             <a href={{ele.href}}>{{ele.title | title}}</a>
+                            <span class="am-badge am-badge-success am-fr">{{ele.time}}</span>
                         </li>
                     </ul>
                 </div>
@@ -80,6 +84,7 @@
                     <ul>
                         <li v-for="ele in academic">
                             <a href={{ele.href}}>{{ele.title | title}}</a>
+                            <span class="am-badge am-badge-success am-fr">{{ele.time}}</span>
                         </li>
                     </ul>
                 </div>
@@ -105,6 +110,7 @@
                     <ul>
                         <li v-for="ele in schoolNotice">
                             <a href={{ele.href}}>{{ele.title | title}}</a>
+                            <span class="am-badge am-badge-success am-fr">{{ele.time}}</span>
                         </li>
                     </ul>
                 </div>
@@ -127,8 +133,8 @@
     <script type="text/javascript" src="js/vue.js"></script>
     <script type="text/javascript">
     Vue.filter('title', function(value) {
-        if (value.length > 22) {
-            value = value.substring(0, 22) + ".."
+        if (value.length > 20) {
+            value = value.substring(0, 20) + ".."
         };
         return value;
     })
