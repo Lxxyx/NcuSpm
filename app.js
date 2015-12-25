@@ -58,7 +58,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(5050);
+app.listen(5050,function() {
+  console.log('Server start')
+});
 
 
 
