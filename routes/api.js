@@ -21,4 +21,8 @@ router.get('/schoolNotice',function(req,res,next) {
 	res.sendFile(dirPath+'/schoolNotice.json');
 });
 
+router.get('/studentWork',function(req,res,next) {
+	res.sendFile(dirPath+'/studentWork.json')
+})
+
 module.exports = router;
