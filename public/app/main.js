@@ -1,4 +1,4 @@
-var App = require('./components/app.vue');
+var App = require('./components/index.vue');
 var Vue = require('vue');
 
 var vm = new Vue({
