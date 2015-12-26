@@ -1,0 +1,16 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  	"dev": "webpack -w",
+    "build": "webpack --config ./webpack.config.min.js -w"
+  },
+  "dependencies": {
+    "amazeui": "^2.5.0",
+    "babel-runtime": "^5.8.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

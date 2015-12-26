@@ -4,6 +4,8 @@ var request = require('request');
 var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
 
+var dataPath = path.resolve('./data')
+
 var baseUrl = 'http://spm.ncu.edu.cn/static/'
 
 var focusNewsOptions = {
@@ -76,11 +78,11 @@ function getFocusNews(data, jsonName) {
 }
 
 function createJSON(data, jsonName) {
-    fs.writeFile(path.join(__dirname, jsonName+'.json'), JSON.stringify(data), function(err, res) {
+    fs.writeFile(path.join(dataPath, jsonName+'.json'), JSON.stringify(data), function(err, res) {
         if (err) {
             throw err
         } else {
-            console.log(jsonName + ' Success!')
+            console.log(jsonName + '==> Success!')
         }
     });
 }

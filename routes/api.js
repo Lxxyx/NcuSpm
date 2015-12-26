@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var staticPath = path.resolve('./public');
-var dirPath = path.resolve('./')
+var dataPath = path.resolve('./data')
 
 
 router.get('/', function(req, res, next) {
@@ -10,19 +10,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/focusNews',function(req,res,next) {
-	res.sendFile(dirPath+'/focusNews.json');
+	res.sendFile(dataPath+'/focusNews.json');
 });
 
 router.get('/academic',function(req,res,next) {
-	res.sendFile(dirPath+'/academic.json');
+	res.sendFile(dataPath+'/academic.json');
 });
 
 router.get('/schoolNotice',function(req,res,next) {
-	res.sendFile(dirPath+'/schoolNotice.json');
+	res.sendFile(dataPath+'/schoolNotice.json');
 });
 
 router.get('/studentWork',function(req,res,next) {
-	res.sendFile(dirPath+'/studentWork.json')
+	res.sendFile(dataPath+'/studentWork.json')
 })
 
 module.exports = router;
