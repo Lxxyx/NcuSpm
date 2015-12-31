@@ -17,3 +17,19 @@
     .am-badge-success {
         width: 4rem;
     }
+    
+    html,
+    body {
+        height: 100%;
+    }
+    
+    .container {
+        min-height: 100%;
+        height: auto!important;
+        height: 100%;
+        position: relative;
+    }
+    
+    .page {
+        padding-bottom: 6.5rem;
+    }

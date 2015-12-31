@@ -1,5 +1,5 @@
 <template>
-    <div class="am-g">
+    <div class="am-g" style="position: absolute;bottom: 0;clear: both;">
         <div class="am-u-sm-12" style="background-color: rgb(52,89,131); color: white;">
             <div class="am-text-center" style="margin-top: 0.4rem;">
                 版权所有 南昌大学公共管理学院 ©2009-2015
@@ -15,5 +15,6 @@
 <style type="text/css">
     #aboutMe {
         color: white;
+        text-decoration: underline;
     }
 </style>
