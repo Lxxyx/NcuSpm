@@ -1,10 +1,9 @@
-var App = require('./components/index.vue');
+var About = require('./components/about.vue');
 var Vue = require('vue');
 
 var vm = new Vue({
-	
 	el: "body",
 	components:{
-		app:App
+		about:About
 	}
 });

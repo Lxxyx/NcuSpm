@@ -20,7 +20,7 @@
 			value = value.substring(0, 18) + ".."
 		};
 		return value;
-	})
+	});
 
 	export default {
 		components:{

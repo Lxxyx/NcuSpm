@@ -59,7 +59,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(5050,function() {
-  console.log('Server start')
+  console.log('Server start at http://127.0.0.1:5050')
 });
 
 
