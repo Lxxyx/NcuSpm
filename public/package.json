@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
   	"dev": "webpack -w",
-    "build": "webpack --config ./webpack.config.min.js -w"
+    "build": "webpack --config ./webpack.config.min.js && node ./../bin/putJS.js"
   },
   "dependencies": {
     "amazeui": "^2.5.0",

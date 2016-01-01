@@ -18,6 +18,7 @@
     "jquery": "^2.1.4",
     "morgan": "~1.6.1",
     "node-schedule": "^0.6.0",
+    "qiniu": "^6.1.9",
     "request": "^2.67.0",
     "serve-favicon": "~2.3.0"
   }
