@@ -6,7 +6,7 @@
             </div>
             <div class="am-text-center" style="margin-top: 0.2rem;margin-bottom: 0.5rem;">
                 地址:江西省南昌市红谷滩新区学府大道999号 邮编:330031&nbsp;&nbsp;
-                <a href="/about.html" id="aboutMe">About Me</a>
+                <a href="/about" id="aboutMe">About Me</a>
             </div>
         </div>
     </div>

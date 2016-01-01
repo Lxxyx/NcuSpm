@@ -22,6 +22,6 @@ router.get('/schoolNotice',function(req,res,next) {
 
 router.get('/studentWork',function(req,res,next) {
 	res.sendFile(dataPath+'/studentWork.json')
-})
+});
 
 module.exports = router;

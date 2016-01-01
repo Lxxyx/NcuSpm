@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
   res.sendFile(staticPath+'/index.html');
 });
 
-router.get('/xsgz',function(req,res) {
-	res.sendFile(staticPath+'/xsgz.html');
+router.get('/about',function(req,res) {
+	res.sendFile(staticPath+'/about.html');
 });
 
 module.exports = router;
