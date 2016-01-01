@@ -3,7 +3,6 @@ var router = express.Router();
 var path = require('path');
 var staticPath = path.resolve('./public');
 var dataPath = path.resolve('./data')
-var userDao = require('./../db/userDao.js')
 
 router.get('/', function(req, res, next) {
   res.send('This is api');
