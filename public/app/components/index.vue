@@ -1,11 +1,19 @@
 <template>
 	<div class="container">
 		<div class="page">
+			<!-- 顶部导航开始 -->
 			<headernav></headernav>
+			<!-- /顶部导航结束 -->
+			<!-- 轮播图开始 -->
 			<slide></slide>
+			<!-- /轮播图结束 -->
+			<!-- 新闻展示部分开始 -->
 			<news></news>
+			<!-- /新闻展示部分结束 -->
 		</div>
+		<!-- 底栏部分开始 -->
 		<bottom></bottom>
+		<!-- /底栏部分结束 -->
 	</div>
 </template>
 

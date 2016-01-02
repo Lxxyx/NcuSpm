@@ -1,7 +1,11 @@
 <template>
 	<div class="container">
+		<!-- 顶部导航开始 -->
 		<headernav></headernav>
+		<!-- /顶部导航结束 -->
+		<!-- 网页主体部分开始 -->
 		<div class="am-g page">
+			<!-- 文章部分开始 -->
 			<div class="am-container">
 				<p>
 					网站的制作，源于自己的一个想法。项目于2015.12.24正式开始。数据直接从原官网获取。图片等文件则使用爬虫爬取并自动上传到七牛。
@@ -21,8 +25,12 @@
 					<h3>2016，Fighting~</h3>
 				</p>
 			</div>
+			<!-- /文章部分结束 -->
 		</div>
+		<!-- /网页主体部分结束 -->
+		<!-- 底栏部分开始 -->
 		<bottom></bottom>
+		<!-- /底栏部分结束 -->
 	</div>
 </template>
 
