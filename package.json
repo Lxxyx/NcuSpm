@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./app.js",
-    "update": "node ./bin/update.js"
+    "update": "node ./bin/getNews.js && node ./bin/getStudent.js"
   },
   "dependencies": {
     "babel-runtime": "^5.8.34",
@@ -16,6 +16,7 @@
     "iconv-lite": "^0.4.13",
     "jade": "~1.11.0",
     "jquery": "^2.1.4",
+    "mongoose": "^4.3.4",
     "morgan": "~1.6.1",
     "node-schedule": "^0.6.0",
     "qiniu": "^6.1.9",
