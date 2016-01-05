@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var api = require('./routes/api')
+var api = require('./routes/api');
 
 var app = express();
 
@@ -59,7 +59,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(5050,function() {
-  console.log('Server start at http://127.0.0.1:5050')
+  console.log('Server start at http://127.0.0.1:5050');
 });
 
 
