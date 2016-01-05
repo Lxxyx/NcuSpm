@@ -23,12 +23,14 @@
 	var News = require('./news.vue');
 	var Bottom = require('./bottom.vue');
 	var Vue = require('vue');
+
 	Vue.filter('title', function(value) {
 		if (value.length > 18) {
 			value = value.substring(0, 18) + ".."
 		};
 		return value;
 	});
+	
 	export default {
 		components: {
 			headernav: Header,

@@ -30,5 +30,6 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.js')
-    ]
-}
+    ],
+    devtool: 'source-map'
+};
