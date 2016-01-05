@@ -3,12 +3,12 @@ var path = require('path');
 var request = require('request');
 var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
-var dataPath = path.resolve(__dirname + './../data')
+var dataPath = path.resolve(__dirname + './../data');
 
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://127.0.0.1:27017/ncuspm')
+var db = mongoose.connect('mongodb://127.0.0.1:27017/ncuspm');
 
-var baseUrl = 'http://spm.ncu.edu.cn/static/'
+var baseUrl = 'http://spm.ncu.edu.cn/static/';
 
 /**
  * 焦点新闻爬虫的配置
@@ -46,10 +46,10 @@ var academicOptions = {
 request(focusNewsOptions, function(err, res, body) {
     if (body) {
         var jsonName = 'focusNews';
-        var html = iconv.decode(body, 'gb2312')
+        var html = iconv.decode(body, 'gb2312');
         getFocusNews(html, jsonName, {
             decodeEntities: false
-        })
+        });
     }
 });
 
@@ -59,10 +59,10 @@ request(focusNewsOptions, function(err, res, body) {
 request(schoolNoticeOptions, function(err, res, body) {
     if (body) {
         var jsonName = 'schoolNotice';
-        var html = iconv.decode(body, 'gb2312')
+        var html = iconv.decode(body, 'gb2312');
         getFocusNews(html, jsonName, {
             decodeEntities: false
-        })
+        });
     }
 });
 
@@ -72,10 +72,10 @@ request(schoolNoticeOptions, function(err, res, body) {
 request(academicOptions, function(err, res, body) {
     if (body) {
         var jsonName = 'academic';
-        var html = iconv.decode(body, 'gb2312')
+        var html = iconv.decode(body, 'gb2312');
         getFocusNews(html, jsonName, {
             decodeEntities: false
-        })
+        });
     }
 });
 
@@ -107,16 +107,20 @@ function getFocusNews(data, jsonName) {
         var focusNewsHref = focusNews[i].attribs.href;
         // 创建新闻对象，用于后期创建json数据
         var focusNewsTime = focusNews[i].parent.parent.children[5].children[0].data;
+
         var newsObj = {};
+
         var studentWork = new Sw({
             title: focusNewsTitle,
             time: focusNewsTime,
             href: baseUrl+focusNewsHref
         });
-        news.push(studentWork)
-        studentWork.save()
+        studentWork.save();
+
+        news.push(studentWork);
     }
-    createJSON(news, jsonName)
+    
+    createJSON(news, jsonName);
 }
 
 /**
@@ -127,9 +131,9 @@ function getFocusNews(data, jsonName) {
 function createJSON(data, jsonName) {
     fs.writeFile(path.join(dataPath, jsonName + '.json'), JSON.stringify(data), function(err, res) {
         if (err) {
-            throw err
+            throw err;
         } else {
-            console.log(jsonName + '==> Success!')
+            console.log(jsonName + '==> Success!');
         }
     });
 }
