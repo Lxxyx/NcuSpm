@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./app.js",
+    "dev":"supervisor ./app.js",
     "update": "node ./bin/getNews.js && node ./bin/getStudent.js"
   },
   "dependencies": {
