@@ -5,15 +5,19 @@ var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
 var dataPath = path.resolve(__dirname + './../data');
 
+var baseUrl = 'http://spm.ncu.edu.cn/';
 var start = function() {
+
+    /**
+     * 爬虫配置
+     * @type {Object}
+     */
     var studentWorkOptions = {
         method: 'GET',
         url: 'http://spm.ncu.edu.cn/inner3.asp',
         encoding: null
     };
-
-    var baseUrl = 'http://spm.ncu.edu.cn/';
-
+    
     request(studentWorkOptions, function(err, res, body) {
         if (body) {
             var jsonName = 'studentWork';
@@ -24,6 +28,11 @@ var start = function() {
         }
     });
 
+    /**
+     * 载入网页，获取网页信息
+     * @param  {HTML} data     获取到的网页源代码
+     * @param  {String} jsonName 创建Json文件的名称
+     */
     function getNews(data, jsonName) {
         var $ = cheerio.load(data);
         var news = $('td a').toArray();
@@ -42,9 +51,15 @@ var start = function() {
 
             newsList.push(newsObj);
         }
+
         createJSON(newsList, jsonName);
     }
 
+    /**
+     * 创建JSON文件，保存数据
+     * @param  {Array} data     创建的数组，最后格式化为JSON
+     * @param  {String} jsonName JSON文件名
+     */
     function createJSON(data, jsonName) {
         fs.writeFile(path.join(dataPath, jsonName + '.json'), JSON.stringify(data), function(err, res) {
             if (err) {
@@ -56,4 +71,8 @@ var start = function() {
     }
 };
 
+/**
+ * 导出Start函数
+ * @type {Function}
+ */
 exports.start = start;

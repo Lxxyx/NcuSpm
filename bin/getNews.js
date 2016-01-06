@@ -4,6 +4,11 @@ var request = require('request');
 var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
 var dataPath = path.resolve(__dirname + './../data');
+
+/**
+ * 用于配置基本URL
+ * @type {String}
+ */
 var baseUrl = 'http://spm.ncu.edu.cn/static/';
 
 var start = function() {
@@ -123,4 +128,8 @@ var start = function() {
 
 };
 
+/**
+ * 导出Start函数
+ * @type {Function}
+ */
 exports.start = start;

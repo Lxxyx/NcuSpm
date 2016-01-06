@@ -1,9 +1,9 @@
 var qiniu = require('qiniu');
 var fs = require('fs');
-qiniu.conf.ACCESS_KEY = 'JG2EofH3JxDgOFwTApawkspvU0Q6p2GPjMHNaaLp'
-qiniu.conf.SECRET_KEY = 'a4juRRC2dn7VDuanIBXfoqsgBz6d5d4mR8B7DT5m'
+qiniu.conf.ACCESS_KEY = 'JG2EofH3JxDgOFwTApawkspvU0Q6p2GPjMHNaaLp';
+qiniu.conf.SECRET_KEY = 'a4juRRC2dn7VDuanIBXfoqsgBz6d5d4mR8B7DT5m';
 
-var bucketName = "ncuspm"
+var bucketName = "ncuspm";
 
 function uptoken(bucketname) {
     var putPolicy = new qiniu.rs.PutPolicy(bucketname);
@@ -28,7 +28,7 @@ function uploadFile(localFile, key, uptoken) {
         if (!err) {
             // 上传成功， 处理返回值
             // console.log(ret.key, ret.hash);
-            console.log("Upload "+key+" ==> Success!")
+            console.log("Upload "+key+" ==> Success!");
                 // ret.key & ret.hash
         } else {
             // 上传失败， 处理返回代码
@@ -40,23 +40,23 @@ function uploadFile(localFile, key, uptoken) {
 
 var client = new qiniu.rs.Client();
 var token = uptoken(bucketName);
-var basePath = './../public/webpack_js/'
+var basePath = './../public/webpack_js/';
 
 fs.readdir('./../public/webpack_js/', function(err, data) {
     for (i in data) {
         client.remove(bucketName, data[i], function(err, ret) {
             if (err) {
-                console.log(err)
+                console.log(err);
             } else {
-            	console.log("Remove ==> Success!")
+            	console.log("Remove ==> Success!");
             }
         });
-    };
+    }
     setTimeout(function() {
         for (x in data) {
             var fileName = data[x];
             var filePath = basePath + data[x];
-            uploadFile(filePath, fileName, token)
+            uploadFile(filePath, fileName, token);
         }
-    },4000)
-})
+    },4000);
+});
