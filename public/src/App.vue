@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-
 export default {
-  components: {
-    Hello
+  data () {
+    return {
+      // note: changing this line won't causes changes
+      // with hot-reload because the reloaded component
+      // preserves its current state and we are modifying
+      // its initial state.
+      msg: 'Hello Vue!'
+    }
   }
 }
 </script>
