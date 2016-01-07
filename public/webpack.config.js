@@ -28,6 +28,10 @@ module.exports = {
         loader: 'css'
       },
       {
+        test: /\.sass$/,
+        loader: 'sass'
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url',
         query: {

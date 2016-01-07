@@ -7,7 +7,11 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "vue": "^1.0.0"
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "scss-loader": "0.0.1",
+    "vue": "^1.0.0",
+    "webpack": "^1.12.10"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
