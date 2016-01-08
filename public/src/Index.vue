@@ -1,42 +1,33 @@
 <template>
   <div class="container">
-    <header>
-      <ul>
-        <li><a href="#">Get out from my dream,you,that's not enough</a></li>
-        <li><a href="#">Get out from my dream,you,that's not enough</a></li>
-        <li><a href="#">Get out from my dream,you,that's not enough</a></li>
-        <li><a href="#">Get out from my dream,you,that's not enough</a></li>
-        <li><a href="#">Get out from my dream,you,that's not enough</a></li>
-        <li><a href="#">Get out from my dream,you,that's not enough</a></li>
-      </ul>
-    </header>
-    <div class="main">
-      <ul>
-        <li><a href="#">Hello World</a></li>
-      </ul>
-    </div>
+    <theheader></theheader>
+    <content></content>
   </div>
 </template>
-<script>
-require('./assests/normalize.css');
-</script>
-<style lang="sass">
-.container {
-  margin: 0 auto;
-  width: 1080px;
-  border: 1px solid red;
-}
 
-header {
-  ul {
-    list-style-type: none;
-    li {
-      display: block;
-      a {
-        color: gray;
-        text-decoration: none;
-      }
+<style lang="sass">
+  body {
+    background: rgb(238,238,238);
+    font-family: "Microsoft YaHei"
+  }
+  .container {
+    width: 1080px;
+    margin: 0 auto;
+    min-height: 600px;
+    border: 2px solid red;
+  }
+</style>
+
+<script>
+  import TheHeader from './Header.vue'
+  import Content from './content.vue'
+  require('./assests/normalize.css');
+
+  export default {
+    components:{
+      theheader:TheHeader,
+      content:Content
     }
   }
-}
-</style>
+
+</script>
