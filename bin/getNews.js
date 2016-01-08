@@ -1,8 +1,8 @@
-var fs = require('fs');
-var path = require('path');
-var request = require('request');
-var cheerio = require('cheerio');
-var iconv = require('iconv-lite');
+var fs       = require('fs');
+var path     = require('path');
+var request  = require('request');
+var cheerio  = require('cheerio');
+var iconv    = require('iconv-lite');
 var dataPath = path.resolve(__dirname + './../data');
 
 /**
@@ -18,8 +18,8 @@ var start = function() {
    * @type {Object}
    */
   var focusNewsOptions = {
-    method: 'GET',
-    url: 'http://spm.ncu.edu.cn/static/NewsList.asp?Type=1',
+    method  : 'GET',
+    url     : 'http://spm.ncu.edu.cn/static/NewsList.asp?Type=1',
     encoding: null
   };
 
@@ -28,8 +28,8 @@ var start = function() {
    * @type {Object}
    */
   var schoolNoticeOptions = {
-    method: 'GET',
-    url: 'http://spm.ncu.edu.cn/static/NewsList.asp?Type=2',
+    method  : 'GET',
+    url     : 'http://spm.ncu.edu.cn/static/NewsList.asp?Type=2',
     encoding: null
   };
 
@@ -38,8 +38,8 @@ var start = function() {
    * @type {Object}
    */
   var academicOptions = {
-    method: 'GET',
-    url: 'http://spm.ncu.edu.cn/static/NewsList.asp?Type=3',
+    method  : 'GET',
+    url     : 'http://spm.ncu.edu.cn/static/NewsList.asp?Type=3',
     encoding: null
   };
 
@@ -103,20 +103,20 @@ var start = function() {
      */
     var newsObj = {
       title: null,
-      time: null,
-      href: null
+      time : null,
+      href : null
     };
 
     for (var i = 0; i < 10; i++) {
       var focusNewsTitle = focusNews[i].attribs.title;
-      var focusNewsHref = focusNews[i].attribs.href;
+      var focusNewsHref  = focusNews[i].attribs.href;
       // 创建新闻对象，用于后期创建json数据
-      var focusNewsTime = focusNews[i].parent.parent.children[5].children[0].data;
+      var focusNewsTime  = focusNews[i].parent.parent.children[5].children[0].data;
 
 
       newsObj.title = focusNewsTitle;
-      newsObj.time = focusNewsTime;
-      newsObj.href = baseUrl + focusNewsHref;
+      newsObj.time  = focusNewsTime;
+      newsObj.href  = baseUrl + focusNewsHref;
 
       news.push(newsObj);
     }

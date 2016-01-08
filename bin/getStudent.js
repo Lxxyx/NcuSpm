@@ -1,8 +1,8 @@
-var fs = require('fs');
-var path = require('path');
-var request = require('request');
-var cheerio = require('cheerio');
-var iconv = require('iconv-lite');
+var fs       = require('fs');
+var path     = require('path');
+var request  = require('request');
+var cheerio  = require('cheerio');
+var iconv    = require('iconv-lite');
 var dataPath = path.resolve(__dirname + './../data');
 
 /**
@@ -18,15 +18,15 @@ var start = function() {
    * @type {Object}
    */
   var studentWorkOptions = {
-    method: 'GET',
-    url: 'http://spm.ncu.edu.cn/inner3.asp',
+    method  : 'GET',
+    url     : 'http://spm.ncu.edu.cn/inner3.asp',
     encoding: null
   };
 
   request(studentWorkOptions, function(err, res, body) {
     if (body) {
       var jsonName = 'studentWork';
-      var html = iconv.decode(body, 'gb2312');
+      var html     = iconv.decode(body, 'gb2312');
       getNews(html, jsonName, {
         decodeEntities: false
       });
@@ -39,7 +39,7 @@ var start = function() {
    * @param  {String} jsonName 创建Json文件的名称
    */
   function getNews(data, jsonName) {
-    var $ = cheerio.load(data);
+    var $    = cheerio.load(data);
     var news = $('td a').toArray();
 
     /**
@@ -54,8 +54,8 @@ var start = function() {
      */
     var newsObj = {
       title: null,
-      time: null,
-      href: null
+      time : null,
+      href : null
     };
 
     /**
@@ -66,16 +66,19 @@ var start = function() {
 
     for (var i = 0; i < 10; i++) {
       var newsTitle = news[i].attribs.title;
-      var newsHref = baseUrl + news[i].attribs.href;
-      var newsTime = news[i].parent.parent.children[7].children[0].data;
+      var newsHref  = baseUrl + news[i].attribs.href;
+      var newsTime  = news[i].parent.parent.children[7].children[0].data;
 
       newsObj.title = newsTitle;
-      newsObj.time = newsTime;
-      newsObj.href = newsHref;
+      newsObj.time  = newsTime;
+      newsObj.href  = newsHref;
 
       newsList.push(newsObj);
     }
 
+    /**
+     * 调用JSON创建函数
+     */
     createJSON(newsList, jsonName);
   }
 
