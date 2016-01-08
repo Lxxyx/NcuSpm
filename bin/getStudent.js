@@ -6,7 +6,7 @@ var iconv = require('iconv-lite');
 var dataPath = path.resolve(__dirname + './../data');
 
 /**
- * 爬虫网址的起始位置
+ * 用于配置基本URL
  * @type {String}
  */
 var baseUrl = 'http://spm.ncu.edu.cn/';
@@ -41,6 +41,11 @@ var start = function() {
   function getNews(data, jsonName) {
     var $ = cheerio.load(data);
     var news = $('td a').toArray();
+
+    /**
+     * 存放json对象的数组
+     * @type {Array}
+     */
     var newsList = [];
 
     /**

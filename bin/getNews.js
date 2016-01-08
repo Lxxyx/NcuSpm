@@ -91,6 +91,10 @@ var start = function() {
     var $ = cheerio.load(data);
     var focusNews = $('td a').toArray();
 
+    /**
+     * 存放json对象的数组
+     * @type {Array}
+     */
     var news = [];
 
     /**
