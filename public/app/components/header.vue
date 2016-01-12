@@ -7,7 +7,6 @@
                 <img src="./../../img/logoss (1).png" style="max-width: 119px;" />
                 <a href="/">公共管理学院</a>
             </h1>
-        <!-- button的作用在于缩小后出现导航栏的按钮 -->
         <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar'}"><span class="am-sr-only">导航切换</span>
           <span class="am-icon-bars"></span>
         </button>
