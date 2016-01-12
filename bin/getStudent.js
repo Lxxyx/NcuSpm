@@ -1,8 +1,8 @@
-var fs = require('fs');
-var path = require('path');
-var request = require('request');
-var cheerio = require('cheerio');
-var iconv = require('iconv-lite');
+var fs       = require('fs');
+var path     = require('path');
+var request  = require('request');
+var cheerio  = require('cheerio');
+var iconv    = require('iconv-lite');
 var dataPath = path.resolve(__dirname + './../data');
 
 var baseUrl = 'http://spm.ncu.edu.cn/';
@@ -13,8 +13,8 @@ var start = function() {
      * @type {Object}
      */
     var studentWorkOptions = {
-        method: 'GET',
-        url: 'http://spm.ncu.edu.cn/inner3.asp',
+        method  : 'GET',
+        url     : 'http://spm.ncu.edu.cn/inner3.asp',
         encoding: null
     };
     
@@ -41,13 +41,13 @@ var start = function() {
         var re = /[\d]{4}.[\d]{2}.[\d]{2}/g;
         for (var i = 0; i < 10; i++) {
             var newsTitle = news[i].attribs.title;
-            var newsHref = baseUrl + news[i].attribs.href;
-            var newsTime = news[i].parent.parent.children[7].children[0].data;
+            var newsHref  = baseUrl + news[i].attribs.href;
+            var newsTime  = news[i].parent.parent.children[7].children[0].data;
 
-            var newsObj = {};
+            var newsObj   = {};
             newsObj.title = newsTitle;
-            newsObj.time = newsTime;
-            newsObj.href = newsHref;
+            newsObj.time  = newsTime;
+            newsObj.href  = newsHref;
 
             newsList.push(newsObj);
         }
