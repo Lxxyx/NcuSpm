@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/NcuSpm-1.23-brightgreen.svg" alt="版本"></a>
+  <a href="#"><img src="https://img.shields.io/badge/BackEnd-Node%2BExpress-blue.svg" alt="BackEnd"></a>
+  <a href="#"><img src="https://img.shields.io/badge/FrontEnd-Vue%2BAmazeUI-blue.svg" alt="FrontEnd"></a>
+</p>
+
 ## 项目情况
 ### 简介：
 一直想重构自己学院的官网。项目于2015.12.24正式开始。数据直接从原官网获取。图片等文件则使用爬虫爬取并自动上传到七牛。（图片上传暂未实现）
