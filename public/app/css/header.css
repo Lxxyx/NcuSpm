@@ -1,0 +1,99 @@
+body {
+  background: url(./../../img/body.gif) repeat;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    min-height: 100%;
+    height: auto!important;
+    height: 100%;
+    position: relative;
+}
+
+.page {
+    padding-bottom: 6.5rem;
+}
+
+.am-nav-pills>li+li {
+  margin-left: 0!important;
+}
+
+.am-topbar-nav>li>a {
+  padding: 0 13px;
+}
+
+.topIcon {
+  display: inline-block;
+  position: relative;
+}
+
+.topIcon li {
+  cursor: pointer;
+}
+
+.topIcon ul li {
+  display: inline-block;
+  padding-top: 2px;
+  width: 100px;
+  text-align: center;
+}
+
+.topIcon ul li:hover {
+  background: rgb(0, 169, 255);
+}
+
+.topIcon ul {
+  position: absolute;
+  top: 50px;
+  margin-top: 0rem! important;
+  padding-left: 0rem!important;
+  background: rgb(13, 137, 200);
+  z-index: 999;
+  visibility: hidden;
+}
+
+.topIcon ul li a {
+  font-size: 1.4rem;
+}
+
+.article {
+  margin-top: 2rem;
+}
+
+.title {
+  margin-top: 5px;
+  margin-bottom: 0!important;
+  font-size:22px;
+}
+
+.time {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #888;
+  font-size:17px;
+}
+
+.article-header {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #0E90D2;
+}
+
+.content {
+  margin-top: 10px;
+  margin-bottom:10px;
+  font-size:17px;
+}
+
+.article {
+  background:#ffffff;
+  border-radius:10px;
+}
+
+#aboutMe {
+  color: white;
+  text-decoration: underline;
+}

@@ -48,7 +48,8 @@ var start = function() {
             newsObj.title = newsTitle;
             newsObj.time  = newsTime;
             newsObj.href  = newsHref;
-
+            newsObj.id = i + 1;
+            
             newsList.push(newsObj);
         }
 

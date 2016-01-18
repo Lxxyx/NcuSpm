@@ -8,20 +8,20 @@ router.get('/', function(req, res, next) {
   res.send('This is api');
 });
 
-router.get('/focusNews',function(req,res,next) {
-	res.sendFile(dataPath+'/focusNews.json');
+router.get('/focusNews', function(req, res, next) {
+  res.sendFile(dataPath + '/focusNews.json');
 });
 
-router.get('/academic',function(req,res,next) {
-	res.sendFile(dataPath+'/academic.json');
+router.get('/academic', function(req, res, next) {
+  res.sendFile(dataPath + '/academic.json');
 });
 
-router.get('/schoolNotice',function(req,res,next) {
-	res.sendFile(dataPath+'/schoolNotice.json');
+router.get('/schoolNotice', function(req, res, next) {
+  res.sendFile(dataPath + '/schoolNotice.json');
 });
 
-router.get('/studentWork',function(req,res,next) {
-	res.sendFile(dataPath+'/studentWork.json')
+router.get('/studentWork', function(req, res, next) {
+  res.sendFile(dataPath + '/studentWork.json')
 });
 
 module.exports = router;

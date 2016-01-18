@@ -102,6 +102,7 @@ var start = function() {
             newsObj.title = focusNewsTitle;
             newsObj.time  = focusNewsTime;
             newsObj.href  = baseUrl + focusNewsHref;
+            newsObj.id = i + 1;
 
             news.push(newsObj);
         }

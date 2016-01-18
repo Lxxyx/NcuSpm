@@ -4,6 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
 var dataPath = path.resolve(__dirname + './../data');
+var academicPath = path.resolve(__dirname + './../data/academic')
 
 var baseUrl = 'http://spm.ncu.edu.cn/';
 
@@ -26,43 +27,39 @@ fs.readFile(dataPath + '/academic.json', 'utf-8', function(err, data) {
  */
 function getUrl(data) {
   var urlList = [];
+
   for (x in data) {
-    urlList[x] = data[x].href
+    var obj = {};
+    obj.href = data[x].href;
+    obj.id = data[x].id;
+    urlList.push(obj);
   }
+
   loop(urlList);
 }
 
 function loop(data) {
+
   var urlOptions = {
     method: 'GET',
     url: '',
     encoding: null
   };
+
+  var i = 0;
+
   for (x in data) {
-    urlOptions.url = data[x];
+    urlOptions.url = data[x].href;
     request(urlOptions, function(err, res, body) {
+
       if (body) {
-        var jsonName = 'content';
+        var jsonName = data[x].id;
         var html = iconv.decode(body, 'gb2312');
         getContent(html, jsonName)
       }
     });
   }
 }
-
-// var urlOptions = {
-//   method: 'GET',
-//   url: 'http://spm.ncu.edu.cn/static/ShowNews.asp?NewsID=348',
-//   encoding: null
-// };
-
-// request(urlOptions, function(err, res, body) {
-//   if (body) {
-//     var jsonName = 'content';
-//     var html = iconv.decode(body, 'gb2312');
-//     getContent(html, jsonName)
-//   }
-// });
 
 function getContent(data, jsonName) {
   var $ = cheerio.load(data);
@@ -78,7 +75,7 @@ function getContent(data, jsonName) {
 
   var newsList = [];
   var newsObj = {
-    content: ""
+    content: '',
   }
   for (x in article) {
     if (article[x].name === 'br') {
@@ -97,7 +94,7 @@ function getContent(data, jsonName) {
  * @param  {String} jsonName 文件名
  */
 function createJSON(data, jsonName) {
-  fs.writeFile(path.join(dataPath, jsonName + '.json'), JSON.stringify(data), function(err, res) {
+  fs.writeFile(path.join(academicPath, jsonName + '.json'), JSON.stringify(data), function(err, res) {
     if (err) {
       throw err;
     } else {

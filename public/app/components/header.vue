@@ -61,6 +61,7 @@
 </template>
 <script>
 var $ = require('jquery');
+require('./../css/header.css');
 
 export default {
   ready() {
@@ -72,46 +73,3 @@ export default {
   }
 }
 </script>
-<style type="text/css">
-.am-nav-pills>li+li {
-  margin-left: 0!important;
-}
-
-.am-topbar-nav>li>a {
-  padding: 0 13px;
-}
-
-.topIcon {
-  display: inline-block;
-  position: relative;
-}
-
-.topIcon li {
-  cursor: pointer;
-}
-
-.topIcon ul li {
-  display: inline-block;
-  padding-top: 2px;
-  width: 100px;
-  text-align: center;
-}
-
-.topIcon ul li:hover {
-  background: rgb(0, 169, 255);
-}
-
-.topIcon ul {
-  position: absolute;
-  top: 50px;
-  margin-top: 0rem! important;
-  padding-left: 0rem!important;
-  background: rgb(13, 137, 200);
-  z-index: 999;
-  visibility: hidden;
-}
-
-.topIcon ul li a {
-  font-size: 1.4rem;
-}
-</style>
