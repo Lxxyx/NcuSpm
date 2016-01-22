@@ -12,4 +12,8 @@ router.get('/about',function(req,res) {
 	res.sendFile(staticPath+'/about.html');
 });
 
+router.get('/wx',function(req,res) {
+  res.sendFile(staticPath+'/wx.html');
+});
+
 module.exports = router;
