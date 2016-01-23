@@ -1,7 +1,7 @@
 <template>
 	<!-- 学院公告 -->
 	<div class="am-u-sm-12 am-u-md-6">
-		<img src="./../../../img/xshd (2).png" class="am-center am-img-responsive" />
+		<img src="./../../../img/xshd2.png" class="am-center am-img-responsive" />
 		<div class="am-u-sm-12 am-u-md-12 am-u-md-centered" id="schoolNotice">
 			<ul>
 				<li v-for="ele in schoolNotice">
