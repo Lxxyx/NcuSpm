@@ -16,4 +16,8 @@ router.get('/wx',function(req,res) {
   res.sendFile(staticPath+'/wx.html');
 });
 
+router.get('/dba',function(req,res) {
+  res.sendFile(staticPath+'/db.html');
+});
+
 module.exports = router;
