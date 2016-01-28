@@ -16,8 +16,13 @@
 
 <body>
   <index></index>
-  <script type="text/javascript" src='http://7xpour.com1.z0.glb.clouddn.com/common.js'></script>
-  <script type="text/javascript" src='http://7xpour.com1.z0.glb.clouddn.com/index.js'></script>
+  <script type='text/javascript' id="__bs_script__">
+  //<![CDATA[
+  document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace("HOST", location.hostname));
+  //]]>
+  </script>
+  <script type="text/javascript" src='./webpack_js/common.js'></script>
+  <script type="text/javascript" src='./webpack_js/index.js'></script>
   <script>
   (function(i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
@@ -33,15 +38,6 @@
 
   ga('create', 'UA-71260673-1', 'auto');
   ga('send', 'pageview');
-  </script>
-  <script>
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?bb5ddf70555e6932144ac8da29e7db2b";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
   </script>
 </body>
 

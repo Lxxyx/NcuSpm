@@ -51,7 +51,7 @@
               <a href="http://spm.ncu.edu.cn/static/MPAEdu.asp">MPA教育</a>
             </li>
             <li class="topIcon">
-              <a href="#">党建团建</a>
+              <a href="#" @click="showLogin()">登陆/注册</a>
             </li>
           </ul>
         </div>
@@ -70,6 +70,12 @@ export default {
     }, function() {
       $('.topIcon ul').css("visibility", "hidden")
     });
+  },
+  methods:{
+    showLogin:function() {
+      console.log('Start Dispatch')
+      this.$dispatch("toggleLogin");
+    }
   }
 }
 </script>

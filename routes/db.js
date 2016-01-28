@@ -7,62 +7,50 @@ var dataPath = path.resolve('./data')
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 
-var url = 'mongodb://localhost:27017/ncuspm';
+var dbUrl = 'mongodb://localhost:27017/ncuspm';
 
 router.get('/', function(req, res, next) {
   res.send('This is Db Api');
 });
 
 router.post('/login', function(req, res) {
-  var user = {
-    "userName": req.body.userName,
-    "password": req.body.password
-  }
-
-  MongoClient.connect(url, function(err, db) {
-    if (err) {
-      console.log(err)
-      return false;
-    };
-
+  MongoClient.connect(dbUrl, function(err, db) {
     var collection = db.collection('user');
 
-    collection.find(user).toArray(function(err, docs) {
-      if (docs[0] != null) {
-        res.json(docs)
-      } else {
-        res.json({
-          'errorMsg': 'NoUser'
-        })
-      }
-      db.close();
-    });
+    collection.findOne(req.body)
+      .then(function(result) {
+        if (result === null) {
+          res.status(400).send("账号密码错误，或用户名不存在！")
+        } else {
+          res.json(result);
+        }
+        db.close();
+      })
 
   });
 });
 
 router.post('/reg', function(req, res) {
-  var user = {
-    "userName": req.body.userName,
-    "password": req.body.password
+  var checkUser = {
+    "userName": req.body.userName
   };
 
-  MongoClient.connect(url, function(err, db) {
-    if (err) {
-      console.log(err)
-      return false;
-    };
-    collection.find({
-      "userName":user.userName
-    }).toArray(function(err,doc) {
-      res.json(doc)
-    })
+  MongoClient.connect(dbUrl, function(err, db) {
     var collection = db.collection('user');
 
-    collection.insertOne(user,function(err,status) {
-      res.json(status)
-    });
-    db.close();
+    collection.findOne(checkUser)
+      .then(function(result) {
+        if (result === null) {
+          collection.insertOne(req.body)
+            .then(function(result) {
+              res.json(result);
+            })
+        } else {
+          res.status(400).send('用户名已被注册')
+        }
+        db.close();
+      })
+
   });
 })
 
