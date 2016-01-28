@@ -44,11 +44,13 @@ router.post('/reg', function(req, res) {
           collection.insertOne(req.body)
             .then(function(result) {
               res.json(result);
+              db.close();
             })
         } else {
           res.status(400).send('用户名已被注册')
+          db.close();
         }
-        db.close();
+        
       })
 
   });

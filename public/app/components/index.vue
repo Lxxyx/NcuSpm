@@ -56,14 +56,17 @@ export default {
       'openReg':function() {
         this.isShowLogin = false;
         this.isShowReg = true;
+        return true;
       },
       'closeReg':function() {
         this.isShowReg = false;
         this.isShowMask = false;
+        return true;
       },
       'turnLogin':function() {
         this.isShowReg = false;
         this.isShowLogin = true;
+        return true;
       }
     }
 }

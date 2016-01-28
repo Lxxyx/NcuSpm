@@ -111,7 +111,7 @@ export default {
             type: "error",
             confirmButtonText: "OK"
           });
-          
+
         }
       });
 
