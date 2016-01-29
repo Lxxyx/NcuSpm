@@ -1,5 +1,5 @@
 <template>
-  <div class="am-g">
+  <div class="am-g am-show-md-up">
     <div class="am-u-sm-12 am-u-sm-centered" style="padding-left: 0!important;padding-right: 0!important;">
       <div class="am-slider am-slider-default" data-am-flexslider id="slider">
         <ul class="am-slides">

@@ -5,7 +5,7 @@
       <div class="am-container">
         <h4 class="am-topbar-brand am-fl">
                 <img src="./../../img/logoss.png" style="max-width: 111px;"/>
-                <a href="/">公共管理学院</a>
+                <a href="/" style="vertical-align: middle;">公共管理学院</a>
             </h4>
         <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" @click="toggleNav()"><span class="am-sr-only">导航切换</span>
           <span class="am-icon-bars"></span>
