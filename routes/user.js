@@ -19,8 +19,8 @@ router.post('/login', function(req, res) {
         if (result === null) {
           res.status(400).send("账号密码错误，或用户名不存在！")
         } else {
-          res.cookie("userName",req.body.userName,{
-            expires: new Date(Date.now() + 900000)
+          res.cookie("userName", req.body.userName, {
+            expires: new Date(Date.now() + 3600)
           }).json(result);
         }
         db.close();
@@ -53,5 +53,25 @@ router.post('/reg', function(req, res) {
       })
 
   });
-})
+});
+
+router.get('/info', function(req, res) {
+  if (req.cookies.userName) {
+    var checkUser = {
+      'userName': req.cookies.userName
+    };
+    MongoClient.connect(dbUrl, function(err, db) {
+      var collection = db.collection('user');
+
+      collection.findOne(checkUser)
+        .then(function(result) {
+          res.json(result)
+          db.close();
+        });
+    });
+  } else {
+    res.status(400).send('未登陆');
+  }
+});
+
 module.exports = router;

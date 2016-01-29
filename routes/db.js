@@ -23,7 +23,7 @@ router.post('/login', function(req, res) {
           res.status(400).send("账号密码错误，或用户名不存在！")
         } else {
           res.cookie("userName",req.body.userName,{
-            expires: new Date(Date.now() + 900000)
+            expires: new Date(Date.now() + 3600000)
           }).json(result);
         }
         db.close();

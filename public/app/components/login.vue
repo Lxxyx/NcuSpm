@@ -101,6 +101,8 @@ export default {
             type: "success",
             timer: 1600,
             showConfirmButton: false
+          }, function() {
+            location.reload();
           });
 
         },
@@ -160,8 +162,8 @@ export default {
 </script>
 <style lang="sass">
 .slideLogin-transition {
-  transition: 0.2s linear;
-  height: 25rem;
+  transition: 0.2s ease-out;
+  height: 27rem;
 }
 
 .slideLogin-enter,
@@ -171,7 +173,7 @@ export default {
 }
 
 .slideReg-transition {
-  transition: 0.2s linear;
+  transition: 0.2s ease-out;
   height: 42rem;
 }
 

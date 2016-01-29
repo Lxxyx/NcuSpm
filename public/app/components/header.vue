@@ -3,14 +3,14 @@
     <!-- 导航部分 -->
     <header class="am-topbar am-topbar-inverse" style="margin-bottom: 0rem!important;">
       <div class="am-container">
-        <h1 class="am-topbar-brand am-fl">
-                <img src="./../../img/logoss.png" style="max-width: 119px;" />
+        <h4 class="am-topbar-brand am-fl">
+                <img src="./../../img/logoss.png" style="max-width: 111px;"/>
                 <a href="/">公共管理学院</a>
-            </h1>
-        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar'}"><span class="am-sr-only">导航切换</span>
+            </h4>
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" @click="toggleNav()"><span class="am-sr-only">导航切换</span>
           <span class="am-icon-bars"></span>
         </button>
-        <div class="am-collapse am-topbar-collapse am-fr" id="topbar">
+        <div class="am-collapse am-topbar-collapse am-fr" v-bind:class="{ 'am-in': isNavOpen}" v-show="isNavOpen" transition="slideNav">
           <ul class="am-nav am-topbar-nav am-nav-pills">
             <li class="topIcon">
               <a href="#">学院概况</a>
@@ -51,7 +51,8 @@
               <a href="http://spm.ncu.edu.cn/static/MPAEdu.asp">MPA教育</a>
             </li>
             <li class="topIcon">
-              <a href="#" @click="showLogin()">登陆/注册</a>
+              <a href="#" @click="showLogin()" v-if="showLoginButton">登陆/注册</a>
+              <a href="#" v-if="isLogin">个人中心</a>
             </li>
           </ul>
         </div>
@@ -64,18 +65,61 @@ var $ = require('jquery');
 require('./../css/header.css');
 
 export default {
-  ready() {
-    $('.topIcon').hover(function() {
-      $(this).children('ul').css("visibility", "visible");
-    }, function() {
-      $('.topIcon ul').css("visibility", "hidden")
-    });
-  },
-  methods:{
-    showLogin:function() {
-      console.log('Start Dispatch')
-      this.$dispatch("toggleLogin");
+  data() {
+      return {
+        showLoginButton: true,
+        isLogin: false,
+        isNavOpen: false
+      }
+    },
+    created() {
+      var that = this;
+      $.ajax({
+        url: "/user/info",
+        type: 'get',
+        dataType: 'json',
+        success: function(data) {
+          console.log(data);
+          that.isLogin = true;
+          that.showLoginButton = false;
+        },
+        error: function(err) {
+          console.log(err.responseText);
+          that.isLogin = false;
+          that.showLoginButton = true;
+        }
+      })
+    },
+    ready() {
+      $('.topIcon').hover(function() {
+        $(this).children('ul').css("visibility", "visible");
+      }, function() {
+        $('.topIcon ul').css("visibility", "hidden")
+      });
+    },
+    methods: {
+      showLogin: function() {
+        console.log('Start Dispatch')
+        this.$dispatch("toggleLogin");
+      },
+      toggleNav: function() {
+        console.log("Start Toggle")
+        this.isNavOpen = !this.isNavOpen;
+      }
     }
-  }
 }
 </script>
+<style lang="sass">
+.slideNav-transition {
+  transition: 0.18s ease-out;
+  height: 225px;
+  overflow: hidden!important;
+}
+
+.slideNav-enter,
+.slideNav-leave {
+  height: 0px;
+  opacity: 0;
+  overflow: hidden!important;
+}
+</style>
