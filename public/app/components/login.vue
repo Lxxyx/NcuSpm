@@ -87,7 +87,7 @@ export default {
     login: function() {
 
       $.ajax({
-        url: "/db/login",
+        url: "/user/login",
         type: "post",
         dataType: "json",
         data: {
@@ -119,7 +119,7 @@ export default {
     reg: function() {
       if (this.password === this.passwordReinput) {
         $.ajax({
-          url: "/db/reg",
+          url: "/user/reg",
           type: "post",
           dataType: "json",
           data: {
@@ -161,7 +161,7 @@ export default {
 <style lang="sass">
 .slideLogin-transition {
   transition: 0.2s linear;
-  height: 23rem;
+  height: 25rem;
 }
 
 .slideLogin-enter,

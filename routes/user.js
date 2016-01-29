@@ -1,8 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
-var staticPath = path.resolve('./public');
-var dataPath = path.resolve('./data')
 
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
@@ -10,7 +7,7 @@ var assert = require('assert');
 var dbUrl = 'mongodb://localhost:27017/ncuspm';
 
 router.get('/', function(req, res, next) {
-  res.send('This is Db Api');
+  res.send('This is User Api');
 });
 
 router.post('/login', function(req, res) {
@@ -57,5 +54,4 @@ router.post('/reg', function(req, res) {
 
   });
 })
-
 module.exports = router;
