@@ -46,7 +46,7 @@
 </template>
 <script>
 var $ = require('jquery')
-require('./../../node_modules/sweetalert/dist/sweetalert.min.js')
+require('sweetalert')
 require('./../../node_modules/sweetalert/dist/sweetalert.css');
 
 export default {

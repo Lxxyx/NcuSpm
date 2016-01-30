@@ -49,9 +49,9 @@ router.get('/schoolNotice', function(req, res, next) {
   MongoClient.connect(dbUrl, function(err, db) {
 
     if (err) {
-      console.log(err)
+      console.log(err);
       return false;
-    };
+    }
 
     var collection = db.collection('article.schoolNotice');
     collection.find({}).limit(queryLimit).toArray(function(err, docs) {
@@ -65,9 +65,9 @@ router.get('/studentWork', function(req, res, next) {
   MongoClient.connect(dbUrl, function(err, db) {
 
     if (err) {
-      console.log(err)
+      console.log(err);
       return false;
-    };
+    }
 
     var collection = db.collection('article.studentWork');
     collection.find({}).limit(queryLimit).toArray(function(err, docs) {
