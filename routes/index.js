@@ -24,8 +24,8 @@ router.get('/resume',function(req,res) {
   res.sendFile(staticPath+'/resume.html');
 });
 
-router.get('/imooc', function(req, res, next) {
-  res.sendFile(staticPath+'/Mooc/index.html');
+router.get('/mooc', function(req, res, next) {
+  res.sendFile(staticPath+'/mooc/index.html');
 });
 
 module.exports = router;
