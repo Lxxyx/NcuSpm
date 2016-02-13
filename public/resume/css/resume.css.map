@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,IAAK;EACH,SAAS,EAFD,IAAI;;AAKd,UAAW;EACT,SAAS,EAND,IAAI;;ACAZ,yCAAyC;EDUzC,IAAK;IACH,KAAK,EAAE,OAAO;ACXhB,yCAAyC;EDgBzC,IAAK;IACH,KAAK,EAAE,GAAG",
+"sources": ["components/index.scss","base/_mixin.scss"],
+"names": [],
+"file": "resume.css"
+}

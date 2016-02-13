@@ -1,0 +1,14 @@
+body {
+  font-size: 12px; }
+
+.container {
+  font-size: 12px; }
+
+@media only screen and (max-width: 480px) {
+  body {
+    color: #596bff; } }
+@media only screen and (max-width: 900px) {
+  body {
+    color: red; } }
+
+/*# sourceMappingURL=resume.css.map */

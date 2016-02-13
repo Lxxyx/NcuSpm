@@ -64,6 +64,4 @@ app.listen(5050,function() {
   console.log('Server start at http://127.0.0.1:5050');
 });
 
-
-
 module.exports = app;

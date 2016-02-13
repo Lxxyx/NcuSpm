@@ -20,4 +20,12 @@ router.get('/dba',function(req,res) {
   res.sendFile(staticPath+'/db.html');
 });
 
+router.get('/resume',function(req,res) {
+  res.sendFile(staticPath+'/resume.html');
+});
+
+router.get('/imooc', function(req, res, next) {
+  res.sendFile(staticPath+'/Mooc/index.html');
+});
+
 module.exports = router;
