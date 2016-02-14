@@ -28,4 +28,8 @@ router.get('/mooc', function(req, res, next) {
   res.sendFile(staticPath+'/mooc/index.html');
 });
 
+router.get('/mob',function(req,res) {
+  res.sendFile(staticPath+'mob/index.html')
+})
+
 module.exports = router;
