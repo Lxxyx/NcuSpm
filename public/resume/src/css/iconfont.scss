@@ -91,11 +91,14 @@
 .icon-gears:before {
   content: "\e608";
   @include iconfont;
+  @include icon-medium;
 }
 
 .icon-cloud:before {
   content: "\e609";
   @include iconfont;
+  @include icon-medium;
+  font-size: 29px;
 }
 
 .icon-gear:before {
