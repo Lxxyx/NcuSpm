@@ -21,7 +21,7 @@ router.get('/dba',function(req,res) {
 });
 
 router.get('/resume',function(req,res) {
-  res.sendFile(staticPath+'/resume.html');
+  res.sendFile(staticPath+'/mob/resume.html');
 });
 
 router.get('/mooc', function(req, res, next) {
