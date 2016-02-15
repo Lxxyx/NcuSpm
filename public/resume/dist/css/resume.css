@@ -110,7 +110,8 @@ dd {
 
 @media (max-width: 1023px) {
   .column-6 {
-    width: 100%; } }
+    width: 100%;
+    padding-left: 0 !important; } }
 
 .column {
   padding-left: 15px; }
