@@ -37,5 +37,6 @@ body {
   @include media("<=phone") {
     padding: 5px 0px;
     margin-top: 0px;
+    box-shadow: 0px 0px 0px;
   }
 }

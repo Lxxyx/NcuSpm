@@ -114,6 +114,10 @@ dd {
   }
   .progress {
     width: 80%;
+    @include media("<=phone") {
+      margin-left: 10px;
+      width: 75%;
+    }
     height:25px;
     background:$black;
     float: left;
