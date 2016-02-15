@@ -21,15 +21,11 @@ router.get('/dba',function(req,res) {
 });
 
 router.get('/resume',function(req,res) {
-  res.sendFile(staticPath+'/mob/resume.html');
+  res.sendFile(staticPath+'/resume/resume.html');
 });
 
 router.get('/mooc', function(req, res, next) {
   res.sendFile(staticPath+'/mooc/index.html');
 });
-
-router.get('/mob',function(req,res) {
-  res.sendFile(staticPath+'mob/index.html')
-})
 
 module.exports = router;
