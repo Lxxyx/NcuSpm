@@ -231,6 +231,15 @@ dd {
     margin-right: 10px;
     font-size: 15px; }
 
+.skills .skill-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 6px 0 5px 26px; }
+
+.skills .skill-description {
+  margin-left: 23px;
+  font-size: 15px; }
+
 footer {
   margin: 15px 6px; }
   footer a {
@@ -254,6 +263,12 @@ h3 {
 body {
   background: #E0E0E0;
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; }
+
+a, strong {
+  color: teal; }
+
+strong {
+  font-weight: 700; }
 
 .container {
   margin-top: 10px;

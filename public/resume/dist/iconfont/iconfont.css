@@ -179,7 +179,8 @@
   position: absolute;
   margin-top: -7px;
   margin-left: 3px;
-  margin-left: -22px; }
+  margin-left: -22px;
+  font-size: 26px; }
 
 .icon-wrench:before {
   content: "\e60d";
